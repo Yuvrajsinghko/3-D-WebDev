@@ -45,14 +45,16 @@ scene.add(mesh);
 
 
 const canvas = document.querySelector("canvas");
-let renderer = new THREE.WebGLRenderer({canvas:canvas});
+let renderer = new THREE.WebGLRenderer({canvas:canvas,antialias:true});
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.render(scene, camera);
 
+
+let clock = new THREE.Clock();
 function animate(){
   window.requestAnimationFrame(animate)
   renderer.render(scene,camera)
-  mesh.rotation.y+=0.01
+  mesh.rotation.y = clock.getElapsedTime();
 
 }
 animate();
