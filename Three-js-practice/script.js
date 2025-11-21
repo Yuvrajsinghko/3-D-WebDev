@@ -39,7 +39,10 @@ scene.add(camera);
 let box = new THREE.BoxGeometry(1,1,1);
 let material = new THREE.MeshBasicMaterial({color: "red"});
 let mesh = new THREE.Mesh(box, material);
+mesh.scale = 1;
 scene.add(mesh);
+
+
 
 const canvas = document.querySelector("canvas");
 let renderer = new THREE.WebGLRenderer({canvas:canvas});
