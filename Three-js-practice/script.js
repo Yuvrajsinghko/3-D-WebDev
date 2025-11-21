@@ -49,3 +49,10 @@ let renderer = new THREE.WebGLRenderer({canvas:canvas});
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.render(scene, camera);
 
+function animate(){
+  window.requestAnimationFrame(animate)
+  renderer.render(scene,camera)
+  mesh.rotation.y+=0.01
+
+}
+animate();
